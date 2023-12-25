@@ -18,6 +18,12 @@ footer {
   margin: 0rem auto;
 }
 
+ol {
+  orphans: 3;
+  widows: 3;
+  line-height: 1.5;
+}
+
 a {
   color: #121212;
 }
@@ -29,6 +35,29 @@ section {
   flex-direction: column;
 }
 
+blockquote {
+  border-left: 0.25rem solid #3eb0ef;
+  color: inherit;
+  font-style: inherit;
+  font-size: 0.85rem;
+  margin: 1em 2em 2em 1em;
+  orphans: 3;
+  widows: 3;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-style: italic;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
 h3 {
   font-size: 1.3rem;
   font-weight: bold;
@@ -36,8 +65,12 @@ h3 {
   margin-bottom: 1rem;
 }
 
-h2 {
+h5 {
   font-size: 1.1rem;
+}
+
+li {
+  font-size: 0.85rem;
 }
 
 img {
@@ -296,7 +329,6 @@ figure {
   border: 0.1rem solid black; /* optional border */
 }
 
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -344,4 +376,24 @@ figure {
   /* Style to make the video fit properly */
   max-width: 100%;
   max-height: 80vh; /* Adjust as necessary */
+}
+
+.op {
+  font-size: 0.7rem;
+  border-radius: 0.3rem;
+  background: rgb(0 0 0 / 3%);
+  padding: 0.5rem;
+}
+
+.my_meta {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.tldr {
+  padding: 1rem;
+  border: 1px solid orange;
+  background: rgb(244 70 17 / 3%);
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
 }
