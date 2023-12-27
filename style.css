@@ -3,12 +3,25 @@ body {
   padding: 0;
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
     "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+
 }
 
 header {
   width: 100%;
   padding: 1rem 0;
   text-align: center;
+}
+
+blockquote {
+  border-left: 0.25rem solid #3eb0ef; /* Adjust the color and width as needed */
+  color: #333; /* Set the text color */
+  font-style: italic; /* Set to normal if italics are not desired */
+  margin: 1em 2em; /* Adjust the space outside the blockquote */
+  padding: 0.5em 1em; /* Adjust the space inside the blockquote */
+  font-size: 1em; /* Set the size of the text */
+  line-height: 1.5; /* Adjust the line height */
+  background-color: #f9f9f9; /* Adjust the background color if needed */
+  /* Other properties */
 }
 
 footer {
@@ -22,6 +35,14 @@ ol {
   orphans: 3;
   widows: 3;
   line-height: 1.5;
+  margin: 1rem auto;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+  text-align: left; /* Ensure text within elements is left-aligned */
+  min-width: 100%; /* At least as wide as the parent */
+  box-sizing: border-box;
 }
 
 a {
@@ -46,6 +67,8 @@ blockquote {
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;
+  min-width: 100%; /* At least as wide as the parent */
+  box-sizing: border-box; /* Include padding and borders in the element's width */
 }
 
 h1 {
