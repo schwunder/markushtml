@@ -61,11 +61,10 @@ blockquote {
   font-size: 1rem;
   color: inherit;
   font-style: inherit;
-  margin: 1em 2em 2em 1em;
+  margin: 1em 2em 2em 4em;
+  padding: 1em 2em 2em 1em;
   orphans: 3;
   widows: 3;
-  padding-left: 1em;
-  padding-right: 1em;
   font-style: italic;
   min-width: 100%; /* At least as wide as the parent */
   box-sizing: border-box; /* Include padding and borders in the element's width */
