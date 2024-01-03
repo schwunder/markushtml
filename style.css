@@ -58,9 +58,9 @@ section {
 
 blockquote {
   border-left: 0.25rem solid #3eb0ef;
+  font-size: 1rem;
   color: inherit;
   font-style: inherit;
-  font-size: 0.85rem;
   margin: 1em 2em 2em 1em;
   orphans: 3;
   widows: 3;
@@ -162,6 +162,7 @@ p {
 
 figcaption {
   width: 65%;
+  text-align: center;
   font-size: 0.9rem;
   color: rgb(119, 122, 125);
   margin: 1rem auto;
