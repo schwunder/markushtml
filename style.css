@@ -155,8 +155,7 @@ ul {
 }
 
 p {
-  font-size: 0.95rem;
-  line-height: 1.4;
+    line-height: 1.4;
 }
 
 figcaption {
@@ -208,7 +207,9 @@ figure {
 @media (min-width: 1200px) {
   .main-content {
     width: 800px;
-    font-size: 15rem;
+  }
+  .title {
+    width: 800px;
   }
   .footer-subscription {
     display: flex;
@@ -225,7 +226,9 @@ figure {
 @media (min-width: 768px) and (max-width: 1199px) {
   .main-content {
     width: 70vw;
-    font-size: 15rem;
+  }
+  .title {
+    width: 70vw;
   }
   .footer-subscription {
     display: flex;
@@ -242,7 +245,9 @@ figure {
 @media (max-width: 767px) {
   .main-content {
     width: 90%;
-    font-size: 5rem;
+  }
+  .title {
+    width: 90%;
   }
   .footer-subscription {
     display: flex;
@@ -402,7 +407,7 @@ figure {
 }
 
 .op {
-  font-size: 0.7rem;
+  font-size: 1.05rem;
   border-radius: 0.3rem;
   background: rgb(0 0 0 / 3%);
   padding: 0.5rem;
@@ -411,6 +416,7 @@ figure {
 .my_meta {
   font-size: 0.8rem;
   font-style: italic;
+  width: 60%;
 }
 
 .tldr {
@@ -419,4 +425,20 @@ figure {
   background: rgb(244 70 17 / 3%);
   border-radius: 0.3rem;
   margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem 2rem 0rem 2rem;
+  align-items: center;
+}
+
+.thanks {
+  padding: 1rem;
+  font-size: smaller;
+  border: 1px solid #9033e74f;
+  background: rgb(110 102 102 / 12%);
 }
