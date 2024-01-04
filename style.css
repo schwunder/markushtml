@@ -364,3 +364,40 @@ article {
   border: 1px solid #9033e74f;
   background: rgb(110 102 102 / 12%);
 }
+
+.thumbnail {
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%; /* This will make the image responsive to the container's width */
+    max-width: 261px; /* Ensures that the image is not wider than the container */
+    width: 100%;
+    border: 0.1rem solid black;
+    background: white;
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+  }
+  
+.thumbnail-grid {
+    width: 100%; /* will scale the width to fit the container */
+    height: auto; /* will maintain the aspect ratio */
+    object-fit: contain; /* will ensure the image is fully visible */
+    display: block; /* remove inline styling default of images */
+    margin: 0 auto; /* center the image within its container */
+    border: 0.1rem solid black; /* optional border */
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  
+
+.thumbnail-1 {
+  width: 25%;
+}
+
+
+.gallery-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 0.1rem;
+}
