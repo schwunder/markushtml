@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>>The Business of Extracting Knowledge from Academic Publications</title>
+    <title>
+      >The Business of Extracting Knowledge from Academic Publications
+    </title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -14,50 +16,202 @@
         <a href="/markushtml/sketch.html" class="nav-item">Sketch</a>
         <a href="/markushtml/about.html" class="nav-item">About</a>
       </nav>
-      
-      
     </header>
 
     <main>
-      <article class="main-content">         
-        <h1 class="title" itemprop="headline">The Business of Extracting Knowledge from Academic Publications</h1>
+      <article class="main-content">
+        <h1 class="title" itemprop="headline">
+          The Business of Extracting Knowledge from Academic Publications
+        </h1>
         <p class="my_meta">
+          <time datetime="2021-07-12T10:37:00-05:00"> December 7, 2021. </time
+          >Send your thoughts via
 
-          <time datetime="2021-07-12T10:37:00-05:00">
-          December 7, 2021.
-          </time>Send your thoughts via
-  
-          <a target="_blank" href="https://twitter.com/mkstra" >
-          twitter</a><iconify-icon data-icon="ei-sc-twitter" data-height="50" data-inline="false"></iconify-icon>
-  
-           or <a target="_blank" href="mailto:strasser.ms@gmail.com">
-            mail</a><iconify-icon data-icon="clarity:email-solid" data-height="50" data-inline="false"></iconify-icon>
-         </p>
-        <p class=op>
-          <em>I ment to post this much earlier but have been fighting with neurological longhaul covid symptoms for most of the year. </em>
+          <a target="_blank" href="https://twitter.com/mkstra"> twitter</a
+          ><iconify-icon
+            data-icon="ei-sc-twitter"
+            data-height="50"
+            data-inline="false"
+          ></iconify-icon>
+
+          or <a target="_blank" href="mailto:strasser.ms@gmail.com"> mail</a
+          ><iconify-icon
+            data-icon="clarity:email-solid"
+            data-height="50"
+            data-inline="false"
+          ></iconify-icon>
+        </p>
+        <p class="op">
+          <em
+            >I ment to post this much earlier but have been fighting with
+            neurological longhaul covid symptoms for most of the year.
+          </em>
+        </p>
+        <div class="tldr">
+          <p>
+            <b>
+              TL;DR: I worked on biomedical literature search, discovery and
+              recommender web applications for many months and concluded that
+              extracting, structuring or synthesizing "insights" from academic
+              publications (papers) or building knowledge bases from a domain
+              corpus of literature has negligible value in industry.</b
+            >
           </p>
-        <div class=tldr>
-          <p> <b> TL;DR: I worked on biomedical literature search, discovery and recommender web applications for many months and concluded that extracting, structuring or synthesizing "insights" from academic publications (papers) or building knowledge bases from a domain corpus of literature has negligible value in industry.</b> </p>
-          
-      <p><b> Close to nothing of what makes science actually work is published as text on the web </b></p></div>
-      <figure >
-        <img
-          src="../images/extracting-knowledge.png"
-        />
-        <figcaption>
-          UIs serving up “insights” from machine-reading millions of papers through specialized search engines, paper recommenders, citation analysis, correlation plots of mentions, hierarchical clusterings of topics, interaction networks (relation extraction), causation graphs [...]
-        </figcaption>
-      </figure>
-      <p>Here’s the outline:<br>(<em>If you can't see a ToC, try reloading the page</em>). <em>You can comment on this post on <a href="https://twitter.com/mkstra/status/1468334482113523716">Twitter </a> or <a href="https://news.ycombinator.com/item?id=29481061"> HN </a></em></p>
-      <h2 >Psychoanalysis of a Troubled Industry </h2>
+
+          <p>
+            <b>
+              Close to nothing of what makes science actually work is published
+              as text on the web
+            </b>
+          </p>
+        </div>
+        <div class="toc2">
+          <ol class="toc-list">
+            <li class="toc-list-item is-active-li">
+              <a href="#" class="toc-link node-name--H1 is-active-link"
+                >The Business of Extracting Knowledge from Academic
+                Publications</a
+              >
+              <ol class="toc-list is-collapsible">
+                <li class="toc-list-item">
+                  <a
+                    href="#psychoanalysis-of-a-troubled-industry"
+                    class="toc-link node-name--H2"
+                    >Psychoanalysis of a Troubled Industry</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#my-quixotic-escapades-in-building-literature-search-and-discovery-tools"
+                    class="toc-link node-name--H2"
+                    >My Quixotic Escapades in Building Literature Search and
+                    Discovery Tools</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#fundamental-issues-with-structuring-academic-literature-as-a-business"
+                    class="toc-link node-name--H2"
+                    >Fundamental Issues with Structuring Academic Literature as
+                    a Business</a
+                  >
+                  <ol class="toc-list is-collapsible is-collapsed">
+                    <li class="toc-list-item">
+                      <a
+                        href="#just-a-paper-an-idea-an-insight-does-not-get-you-innovation"
+                        class="toc-link node-name--H3"
+                        >Just a Paper, an Idea, an Insight Does Not Get You
+                        Innovation</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#contextual-tacit-knowledge-is-not-digital-not-encoded-or-just-not-machine-interpretable-yet"
+                        class="toc-link node-name--H3"
+                        >Contextual, Tacit Knowledge is not Digital, not Encoded
+                        or just not Machine-Interpretable yet</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#experts-have-well-defined-internalized-maps-of-their-field"
+                        class="toc-link node-name--H3"
+                        >Experts have well defined, internalized maps of their
+                        field</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#scientific-publishing-comes-with-signaling-status-games-fraud-and-often-very-little-information"
+                        class="toc-link node-name--H3"
+                        >Scientific Publishing comes with Signaling, Status
+                        Games, Fraud and often Very Little Information</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#non-technical-life-science-labor-is-cheap"
+                        class="toc-link node-name--H3"
+                        >Non-technical Life Science Labor Is Cheap</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#the-literature-is-implicitly-reified-in-public-structured-knowledge-bases"
+                        class="toc-link node-name--H3"
+                        >The Literature is Implicitly Reified in Public
+                        Structured Knowledge Bases</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#advanced-interactives-and-visualizations-are-surprisingly-unsatisfying-to-consume"
+                        class="toc-link node-name--H3"
+                        >Advanced Interactives and Visualizations are
+                        Surprisingly Unsatisfying to Consume</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#unlike-other-business-software-domain-knowledge-bases-of-research-companies-are-maximally-idiosyncratic"
+                        class="toc-link node-name--H3"
+                        >Unlike other Business Software, Domain Knowledge Bases
+                        of Research Companies are Maximally Idiosyncratic</a
+                      >
+                    </li>
+                    <li class="toc-list-item">
+                      <a
+                        href="#divergent-tasks-are-hard-to-evaluate-and-reason-about"
+                        class="toc-link node-name--H3"
+                        >Divergent Tasks are Hard to Evaluate and Reason
+                        About</a
+                      >
+                    </li>
+                  </ol>
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#public-penance-my-mistakes-biases-and-self-deceptions"
+                    class="toc-link node-name--H2"
+                    >Public Penance: My Mistakes, Biases and Self-Deceptions</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a href="#onwards" class="toc-link node-name--H2">Onwards</a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+        <figure>
+          <img src="../images/extracting-knowledge.png" />
+          <figcaption>
+            UIs serving up “insights” from machine-reading millions of papers
+            through specialized search engines, paper recommenders, citation
+            analysis, correlation plots of mentions, hierarchical clusterings of
+            topics, interaction networks (relation extraction), causation graphs
+            [...]
+          </figcaption>
+        </figure>
+        <p>
+          Here’s the outline:<br />(<em
+            >If you can't see a ToC, try reloading the page</em
+          >).
+          <em
+            >You can comment on this post on
+            <a href="https://twitter.com/mkstra/status/1468334482113523716"
+              >Twitter
+            </a>
+            or
+            <a href="https://news.ycombinator.com/item?id=29481061"> HN </a></em
+          >
+        </p>
+        <h2>Psychoanalysis of a Troubled Industry</h2>
         <p>
           Atop the published biomedical literature is an evolved industry around
           the extracting, semantic structuring and synthesizing of research
           papers into search, discovery and knowledge graph software
-          applications (<em
-            ><a href=" "
-              >table of example companies</a
-            ></em
+          applications (<em><a href=" ">table of example companies</a></em
           >). The usual sales pitch goes something like this:
         </p>
         <blockquote>
@@ -137,18 +291,14 @@
           altogether.
         </p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-          <img
-          src="../images/extracting-knowledge-2.png"
-        />
+          <img src="../images/extracting-knowledge-2.png" />
           <figcaption>
             Two sentences semantically with multiple layers of semantic
             annotation
           </figcaption>
         </figure>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-          <img
-          src="../images/extracting-knowledge-3.png"
-        />
+          <img src="../images/extracting-knowledge-3.png" />
           <figcaption>
             An example of a generic biomedical entity-relation schema that might
             power a knowledge base on top
@@ -276,9 +426,7 @@
           textbooks.
         </p>
         <figure class="kg-card kg-image-card">
-          <img
-          src="../images/extracting-knowledge-4.png"
-        />
+          <img src="../images/extracting-knowledge-4.png" />
         </figure>
         <p>
           Before biology, I had worked on text mining, natural language
@@ -653,9 +801,7 @@
           knowledge artifact remains a pipe dream.
         </p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-          <img
-          src="../images/extracting-knowledge-5.png"
-        />
+          <img src="../images/extracting-knowledge-5.png" />
           <figcaption>
             Automatically generating complex schemas like
             <a href="https://www.micropublication.org/">micropubs</a> (above)
@@ -703,9 +849,7 @@
           <strong>Papers are first and foremost career instruments. </strong>
         </p>
         <figure class="kg-card kg-image-card">
-          <img
-          src="../images/extracting-knowledge-6.png"
-        />
+          <img src="../images/extracting-knowledge-6.png" />
         </figure>
         <p>
           A naive system will weigh the insights extracted from a useless
@@ -738,9 +882,7 @@
         </p>
         <p>Well in fact that's what most people do.</p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-          <img
-          src="../images/extracting-knowledge-7.png"
-        />
+          <img src="../images/extracting-knowledge-7.png" />
           <figcaption>
             From
             <a href="http://www.denisdutton.com/bad_writing.htm">Bad Writing</a>
@@ -856,10 +998,8 @@
         <figure
           class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"
         >
-                <img
-                src="../images/extracting-knowledge-13.png"
-              />
-  
+          <img src="../images/extracting-knowledge-13.png" />
+
           <figcaption>Is this actually useful to experts?</figcaption>
         </figure>
         <p>
@@ -1114,105 +1254,140 @@
             towards better problems.</strong
           >
         </p>
-      <div class="thanks">
-        <p>
-          Thanks to
-          <a href="https://www.linkedin.com/in/alex-alekseyenko-81416323"
-            >Alex Alekseyenko </a
-          >, <a href="https://benjaminreinhardt.com/about/">Ben Reinhardt </a>,
-          <a href="https://www.brunogavranovic.com/">Bruno Gavranovic </a>,
-          <a href="https://de.linkedin.com/in/daniel-l-renz"> Daniel Renz </a>,
-          <a href="https://www.newthingsunderthesun.com/"> Matt Clancy </a>,
-          <a href="https://www.rmhsilva.com/">Ric da Silva</a>,
-          <a href="rmeinl.com">Rico Meinl</a> and
-          <a href="https://stephenmalina.com/">Stephen Malina </a> for their
-          thoughts on the draft. Special thanks to
-          <a href="https://marginalrevolution.com/">Tyler Cowen </a> and Emergent
-          Ventures
-        </p>
-  
-        <p>
-          If you like to share or leave a comment, here's the
-          <a href="https://twitter.com/mkstra/status/1468334482113523716">
-            tweet for this essay
-          </a>
-        </p>
-        <p>
-          <b> 0 - </b> If your product’s target users are the dozen full time
-          “information specialists”, “lit/evidence reviewers” inside a bigger
-          pharma company then you can not also offer the product as a consumer
-          self-signup with monthly subscription. Say you charge 100$ per month for
-          individual subscription and there’s 20 people per pharma and you manage
-          to be used by 10 pharma companies (good luck) that’s a measly 20.000$
-          MRR. So instead you sell it as concierge SaaS with on-premise security,
-          consulting work, custom integrations etc for 1 Million $ per year or so
-          (I imagine)
-        </p>
-  
-        <p>
-          <b> 0.5 - </b> I loosely see search and recommender systems as flip
-          sides of each other and both as constraint cases of a reasoner
-        </p>
-  
-        <p>
-          <b> 1 - </b> Rico now works in biotech full-time (talus.bio) so that's a
-          big win.
-        </p>
-  
-        <p>
-          <b> 1.5 </b> One issue with prototyping discovery and search products
-          compared to other software is that it’s hard to do user testing. There
-          are no intermediate or mock versions … you often have to develop a
-          working system to see if the outputs are useful.
-        </p>
-  
-        <p>
-          <b> 2 - </b> A piece of literature is embedded in an implicit world
-          model and has constraints, parameters and a social context, none of
-          which are in the paper. An expert reader needs to have a strong domain
-          and world model to read a paper, ask the right questions, understand
-          context, biases and limitations, take the good parts, reason through a
-          hypothesis and design an experiment. AI grounding has a long way to go.
-        </p>
-  
-        <p>
-          <b> 2.5 - </b> Example of a good literature review: Is Technological
-          Progress Slowing? The case of American Agriculture. Matt takes a
-          research question, selects a focus environment (US agriculture) and a
-          stable metric (crop yields) to assess the rate of progress. That's where
-          meta-research becomes valuable beyond just summarizing papers matching a
-          query. There's a difference between synthesis and summarization.
-        </p>
-        <p>
-          <b> 3 - </b> Many of them admitted to me half-jokingly that you could
-          train a monkey in a few weeks to do their job. Their personalities were
-          the opposite of what you imagine a scientist to be: conformist, beaten,
-          uncurious and bureaucratic.
-        </p>
-  
-        <p>
-          <b> 4 - </b> Like UniProt, BioGRID, Compartments subcellular
-          localization database, Gene Ontology Consortium, HGNC, Human Protein
-          Atlas, IntAct, OMIM, Pfam, ProteomicsDB, Reactome, ...
-        </p>
-        <p>
-          <b> 5 - </b> Only a small fraction of biological phenomena have been
-          formalized or simulated
-        </p>
-        <p>
-          <b> 6 - </b> A week in the lab can save you a day in the library is a
-          quote from a chemist so take it with a grain of salt
-        </p>
-      </div>
+        <div class="thanks">
+          <p>
+            Thanks to
+            <a href="https://www.linkedin.com/in/alex-alekseyenko-81416323"
+              >Alex Alekseyenko </a
+            >,
+            <a href="https://benjaminreinhardt.com/about/">Ben Reinhardt </a>,
+            <a href="https://www.brunogavranovic.com/">Bruno Gavranovic </a>,
+            <a href="https://de.linkedin.com/in/daniel-l-renz"> Daniel Renz </a
+            >,
+            <a href="https://www.newthingsunderthesun.com/"> Matt Clancy </a>,
+            <a href="https://www.rmhsilva.com/">Ric da Silva</a>,
+            <a href="rmeinl.com">Rico Meinl</a> and
+            <a href="https://stephenmalina.com/">Stephen Malina </a> for their
+            thoughts on the draft. Special thanks to
+            <a href="https://marginalrevolution.com/">Tyler Cowen </a> and
+            Emergent Ventures
+          </p>
+
+          <p>
+            If you like to share or leave a comment, here's the
+            <a href="https://twitter.com/mkstra/status/1468334482113523716">
+              tweet for this essay
+            </a>
+          </p>
+          <p>
+            <b> 0 - </b> If your product’s target users are the dozen full time
+            “information specialists”, “lit/evidence reviewers” inside a bigger
+            pharma company then you can not also offer the product as a consumer
+            self-signup with monthly subscription. Say you charge 100$ per month
+            for individual subscription and there’s 20 people per pharma and you
+            manage to be used by 10 pharma companies (good luck) that’s a measly
+            20.000$ MRR. So instead you sell it as concierge SaaS with
+            on-premise security, consulting work, custom integrations etc for 1
+            Million $ per year or so (I imagine)
+          </p>
+
+          <p>
+            <b> 0.5 - </b> I loosely see search and recommender systems as flip
+            sides of each other and both as constraint cases of a reasoner
+          </p>
+
+          <p>
+            <b> 1 - </b> Rico now works in biotech full-time (talus.bio) so
+            that's a big win.
+          </p>
+
+          <p>
+            <b> 1.5 </b> One issue with prototyping discovery and search
+            products compared to other software is that it’s hard to do user
+            testing. There are no intermediate or mock versions … you often have
+            to develop a working system to see if the outputs are useful.
+          </p>
+
+          <p>
+            <b> 2 - </b> A piece of literature is embedded in an implicit world
+            model and has constraints, parameters and a social context, none of
+            which are in the paper. An expert reader needs to have a strong
+            domain and world model to read a paper, ask the right questions,
+            understand context, biases and limitations, take the good parts,
+            reason through a hypothesis and design an experiment. AI grounding
+            has a long way to go.
+          </p>
+
+          <p>
+            <b> 2.5 - </b> Example of a good literature review: Is Technological
+            Progress Slowing? The case of American Agriculture. Matt takes a
+            research question, selects a focus environment (US agriculture) and
+            a stable metric (crop yields) to assess the rate of progress. That's
+            where meta-research becomes valuable beyond just summarizing papers
+            matching a query. There's a difference between synthesis and
+            summarization.
+          </p>
+          <p>
+            <b> 3 - </b> Many of them admitted to me half-jokingly that you
+            could train a monkey in a few weeks to do their job. Their
+            personalities were the opposite of what you imagine a scientist to
+            be: conformist, beaten, uncurious and bureaucratic.
+          </p>
+
+          <p>
+            <b> 4 - </b> Like UniProt, BioGRID, Compartments subcellular
+            localization database, Gene Ontology Consortium, HGNC, Human Protein
+            Atlas, IntAct, OMIM, Pfam, ProteomicsDB, Reactome, ...
+          </p>
+          <p>
+            <b> 5 - </b> Only a small fraction of biological phenomena have been
+            formalized or simulated
+          </p>
+          <p>
+            <b> 6 - </b> A week in the lab can save you a day in the library is
+            a quote from a chemist so take it with a grain of salt
+          </p>
+        </div>
       </article>
     </main>
     <footer class="footer">
-     
-
       <div class="footer-subscription">
         <input type="email" placeholder=" 💌 your email ↩︎ " />
         <button type="button">subscribe</button>
       </div>
     </footer>
+    <script src="../tocbot.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        tocbot.init({
+          tocSelector: ".toc2", // Selector for the TOC container
+          contentSelector: ".main-content", // Selector for the content container
+          headingSelector: "h1, h2, h3", // Headings to include in the TOC
+          collapseDepth: 6,
+        });
+      });
+    </script>
+
+    <script>
+      // Function to apply subtle HSLA background colors to TOC links
+      function applyRainbowBackgroundColors() {
+        // Select all the header links in the TOC
+        const tocHeaders = document.querySelectorAll(".toc-link");
+
+        tocHeaders.forEach((header, index) => {
+          // Calculate the hue value to create a rainbow effect, use the full color wheel (360)
+          const hue = (index * 360) / tocHeaders.length;
+          // Set saturation to 50%, lightness to 50%, and a very low alpha for subtlety
+          const color = `hsla(${hue}, 50%, 50%, 0.1)`;
+          // Apply the background color to the current header
+          header.style.backgroundColor = color;
+        });
+      }
+
+      // Run the function to apply the background colors after the DOM content is loaded
+      document.addEventListener("DOMContentLoaded", (event) => {
+        applyRainbowBackgroundColors();
+      });
+    </script>
   </body>
 </html>

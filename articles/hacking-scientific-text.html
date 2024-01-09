@@ -14,7 +14,6 @@
         <a href="/markushtml/sketch.html" class="nav-item">Sketch</a>
         <a href="/markushtml/about.html" class="nav-item">About</a>
       </nav>
-      
     </header>
 
     <main>
@@ -55,9 +54,7 @@
           High level sophisticated language tools are now <em>hackable</em>.
         </p>
         <figure class="kg-card kg-image-card">
-          <img
-          src="../images/hacking-1.png"
-          />
+          <img src="../images/hacking-1.png" />
         </figure>
         <p>
           Of course, this sort of progress is a given, so to go beyond truisms
@@ -70,7 +67,44 @@
           other ML domains like vision, reinforcement learning and generic NLP.
         </blockquote>
         <!--kg-card-begin: html-->
-        <div class="toc2"></div>
+        <div class="toc2">
+          <ol class="toc-list">
+            <li class="toc-list-item is-active-li">
+              <a href="#" class="toc-link node-name--H1 is-active-link"
+                >Hacking on Scientific Text at Scale</a
+              >
+              <ol class="toc-list is-collapsible">
+                <li class="toc-list-item">
+                  <a
+                    href="#models-strong-gains-in-low-level-language-processing-and-pipeline-modularity"
+                    class="toc-link node-name--H2"
+                    >Models: Strong Gains in "Low Level" Language Processing and
+                    Pipeline Modularity</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#patterns-finding-rules-without-linguists"
+                    class="toc-link node-name--H2"
+                    >Patterns: Finding Rules without Linguists</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#data-bootstrapping-small-but-good-enough-datasets"
+                    class="toc-link node-name--H2"
+                    >Data: Bootstrapping Small but Good-Enough Datasets</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a href="#footnotes" class="toc-link node-name--H2"
+                    >Footnotes</a
+                  >
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
         <!--kg-card-end: html-->
         <p>
           I arbitrarily group these <strong>directions</strong>
@@ -108,9 +142,7 @@
           agrochemical, material science, biophysics, etc.
         </p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-          <img
-          src="../images/hacking-2.png"
-          />
+          <img src="../images/hacking-2.png" />
           <figcaption>
             <a href="https://github.com/kormilitzin/med7">Med7</a> a pre-trained
             model for recognizing 7 types of medical entities
@@ -125,9 +157,7 @@
           has one of the best developer experiences of any open source tool.
         </p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-            <img
-            src="../images/hacking-3.png"
-            />
+          <img src="../images/hacking-3.png" />
           <figcaption>
             My half-baked sketch: NLP pipelines are increasingly composable.
             Integrating high level text processing modules is often only a few
@@ -153,9 +183,7 @@
           <strong>one</strong> surface form of an <em>idea</em>.
         </p>
         <figure class="kg-card kg-image-card">
-            <img
-            src="../images/hacking-4.png"
-            />
+          <img src="../images/hacking-4.png" />
         </figure>
         <p>
           But, as it turns out, there's thousand, often tens of thousands of
@@ -199,9 +227,7 @@
           >. 150.000 times...
         </p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-            <img
-            src="../images/hacking-5.png"
-            />
+          <img src="../images/hacking-5.png" />
           <figcaption>Example of the Spike Query Language</figcaption>
         </figure>
         <p>
@@ -263,9 +289,7 @@
           annotation task into many simple questions.
         </p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-            <img
-            src="../images/hacking-6.png"
-            />
+          <img src="../images/hacking-6.png" />
           <figcaption>QA-SRL</figcaption>
         </figure>
         <p>
@@ -285,9 +309,7 @@
           <br />May 2020
         </blockquote>
         <figure class="kg-card kg-image-card">
-            <img
-            src="../images/hacking-7.png"
-            />
+          <img src="../images/hacking-7.png" />
         </figure>
         <p>
           And QA-SRL mixes well with
@@ -359,9 +381,7 @@
           of <em>hyperresearch</em>?
         </p>
         <figure class="kg-card kg-image-card kg-card-hascaption">
-            <img
-            src="../images/hacking-8.png"
-            />
+          <img src="../images/hacking-8.png" />
           <figcaption>Pruning the graph</figcaption>
         </figure>
         <hr />
@@ -440,7 +460,7 @@
           >
         </p>
         <hr />
-      </>
+      </article>
     </main>
     <footer class="footer">
       <div class="footer-subscription">
@@ -448,5 +468,38 @@
         <button type="button">subscribe</button>
       </div>
     </footer>
+    <script src="../tocbot.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        tocbot.init({
+          tocSelector: ".toc2", // Selector for the TOC container
+          contentSelector: ".main-content", // Selector for the content container
+          headingSelector: "h1, h2, h3", // Headings to include in the TOC
+          collapseDepth: 6,
+        });
+      });
+    </script>
+
+    <script>
+      // Function to apply subtle HSLA background colors to TOC links
+      function applyRainbowBackgroundColors() {
+        // Select all the header links in the TOC
+        const tocHeaders = document.querySelectorAll(".toc-link");
+
+        tocHeaders.forEach((header, index) => {
+          // Calculate the hue value to create a rainbow effect, use the full color wheel (360)
+          const hue = (index * 360) / tocHeaders.length;
+          // Set saturation to 50%, lightness to 50%, and a very low alpha for subtlety
+          const color = `hsla(${hue}, 50%, 50%, 0.1)`;
+          // Apply the background color to the current header
+          header.style.backgroundColor = color;
+        });
+      }
+
+      // Run the function to apply the background colors after the DOM content is loaded
+      document.addEventListener("DOMContentLoaded", (event) => {
+        applyRainbowBackgroundColors();
+      });
+    </script>
   </body>
 </html>

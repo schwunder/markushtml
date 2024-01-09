@@ -401,3 +401,53 @@ article {
   margin: 0 auto;
   gap: 0.1rem;
 }
+
+.toc2 {
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #40e0d063; /* Semi-transparent border color */
+}
+
+.toc-list {
+  list-style: none; /* No bullets for any list */
+  margin: 0; /* No default margin for any list */
+  padding: 0; /* No default padding for top-level list */
+}
+
+.toc-list-item {
+  font-weight: bold; /* Bold font for top-level items */
+  margin-bottom: 10px; /* Space between items */
+}
+
+.toc-list .toc-list {
+  padding-left: 20px; /* Indent for nested lists */
+}
+
+.toc-list .toc-list .toc-list-item {
+  font-weight: normal; /* Normal font weight for nested items */
+}
+
+.toc-link {
+  color: black; /* Link color */
+  font-size: 18px; /* Uniform font size */
+  line-height: 1.6; /* Improved line height for readability */
+  padding: 2px 4px; /* Add padding around the text */
+  border-radius: 4px; /* Optional: round the corners for a smoother effect */
+  display: inline; /* Ensure background only covers the text */
+  box-decoration-break: clone; /* Ensure background wraps nicely around text */
+  -webkit-box-decoration-break: clone; /* Same as above for WebKit browsers */
+}
+
+.toc-link:hover,
+.toc-link.is-active-link {
+  text-decoration: underline; /* Underline on hover and for active link */
+}
+
+/* Styles for showing/hiding collapsible lists */
+.is-collapsible {
+  display: none; /* Hide by default */
+}
+
+.is-active-li > .is-collapsible {
+  display: block; /* Show when parent is active */
+}

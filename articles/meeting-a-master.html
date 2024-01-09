@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meeting a Master
-    </title>
+    <title>Meeting a Master</title>
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
@@ -15,15 +14,11 @@
         <a href="/markushtml/sketch.html" class="nav-item">Sketch</a>
         <a href="/markushtml/about.html" class="nav-item">About</a>
       </nav>
-      
     </header>
 
     <main>
       <article class="main-content">
-        <h1 class="title" itemprop="headline">
-          Meeting a Master
-
-        </h1>
+        <h1 class="title" itemprop="headline">Meeting a Master</h1>
         <p class="my_meta">
           <time datetime="2020-29-08T11:18:30-05:00"> August 29, 2020. </time
           >Send your thoughts via
@@ -60,12 +55,65 @@
           own place. I made this that place.
         </p>
         <figure class="kg-card kg-image-card">
-            <img
-            src="../images/meeting-1.png"
-            />
+          <img src="../images/meeting-1.png" />
         </figure>
         <!--kg-card-begin: html-->
-        <div class="toc2"></div>
+        <div class="toc2">
+          <ol class="toc-list">
+            <li class="toc-list-item is-active-li">
+              <a href="#" class="toc-link node-name--H1 is-active-link"
+                >Meeting a Master</a
+              >
+              <ol class="toc-list is-collapsible">
+                <li class="toc-list-item">
+                  <a
+                    href="#discovering-goethe-s-work"
+                    class="toc-link node-name--H2"
+                    >Discovering Goethe's Work</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a href="#meeting-goethe" class="toc-link node-name--H2"
+                    >Meeting Goethe</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#goethe-invites-eckermann-to-stay-in-weimar"
+                    class="toc-link node-name--H2"
+                    >Goethe Invites Eckermann to Stay in Weimar</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#the-intangible-value-of-a-mentor"
+                    class="toc-link node-name--H2"
+                    >The Intangible Value of a Mentor</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#goethe-teaches-his-theory-of-color-and-light"
+                    class="toc-link node-name--H2"
+                    >Goethe Teaches His Theory of Color and Light</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a href="#the-day-goethe-died" class="toc-link node-name--H2"
+                    >The Day Goethe Died</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#appendix-original-notes-in-german"
+                    class="toc-link node-name--H2"
+                    >Appendix: Original Notes in German</a
+                  >
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
         <!--kg-card-end: html-->
         <h2 id="discovering-goethe-s-work">Discovering Goethe's Work</h2>
         <blockquote>
@@ -106,9 +154,7 @@
           downstairs in the house
         </blockquote>
         <figure class="kg-card kg-image-card">
-            <img
-            src="../images/meeting-2.png"
-            />
+          <img src="../images/meeting-2.png" />
         </figure>
         <blockquote>
           Through the open door opposite, one then looked into a farther room,
@@ -157,9 +203,7 @@
           place?
         </blockquote>
         <figure class="kg-card kg-image-card">
-            <img
-            src="../images/meeting-3.png"
-            />
+          <img src="../images/meeting-3.png" />
         </figure>
         <hr />
         <h2 id="the-intangible-value-of-a-mentor">
@@ -192,9 +236,7 @@
           Goethe Teaches His Theory of Color and Light
         </h2>
         <figure class="kg-card kg-image-card">
-            <img
-            src="../images/meeting-4.png"
-            />
+          <img src="../images/meeting-4.png" />
         </figure>
         <blockquote>
           It might have been about four o'clock in the morning; it was an
@@ -265,9 +307,7 @@
           let the pure teaching be enough for you, and you will do well".
         </blockquote>
         <figure class="kg-card kg-image-card">
-            <img
-            src="../images/meeting-5.png"
-            />
+          <img src="../images/meeting-5.png" />
         </figure>
         <blockquote>
           Mathematicians did not invent the metamorphosis of the plant! I have
@@ -292,9 +332,7 @@
         <hr />
         <h2 id="the-day-goethe-died">The Day Goethe Died</h2>
         <figure class="kg-card kg-image-card kg-width-wide kg-card-hascaption">
-            <img
-            src="../images/meeting-6.png"
-            />
+          <img src="../images/meeting-6.png" />
           <figcaption>Goethe's Room</figcaption>
         </figure>
         <p>Eckermann in Goethe's House on his deathbed:</p>
@@ -526,7 +564,7 @@
           und ich wendete mich abwärts, um meinen verhaltenen Tränen freien Lauf
           zu lassen.
         </blockquote>
-      </>
+      </article>
     </main>
     <footer class="footer">
       <div class="footer-subscription">
@@ -534,5 +572,38 @@
         <button type="button">subscribe</button>
       </div>
     </footer>
+    <script src="../tocbot.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        tocbot.init({
+          tocSelector: ".toc2", // Selector for the TOC container
+          contentSelector: ".main-content", // Selector for the content container
+          headingSelector: "h1, h2, h3", // Headings to include in the TOC
+          collapseDepth: 6,
+        });
+      });
+    </script>
+
+    <script>
+      // Function to apply subtle HSLA background colors to TOC links
+      function applyRainbowBackgroundColors() {
+        // Select all the header links in the TOC
+        const tocHeaders = document.querySelectorAll(".toc-link");
+
+        tocHeaders.forEach((header, index) => {
+          // Calculate the hue value to create a rainbow effect, use the full color wheel (360)
+          const hue = (index * 360) / tocHeaders.length;
+          // Set saturation to 50%, lightness to 50%, and a very low alpha for subtlety
+          const color = `hsla(${hue}, 50%, 50%, 0.1)`;
+          // Apply the background color to the current header
+          header.style.backgroundColor = color;
+        });
+      }
+
+      // Run the function to apply the background colors after the DOM content is loaded
+      document.addEventListener("DOMContentLoaded", (event) => {
+        applyRainbowBackgroundColors();
+      });
+    </script>
   </body>
 </html>

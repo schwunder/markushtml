@@ -70,7 +70,39 @@
           <img src="../images/goethe-advice-1.png" />
         </figure>
         <!--kg-card-begin: html-->
-        <div class="toc2"></div>
+        <div class="toc2">
+          <ol class="toc-list">
+            <li class="toc-list-item is-active-li">
+              <a href="#" class="toc-link node-name--H1 is-active-link">Goethe's Advice to Young Artists</a>
+              <ol class="toc-list is-collapsible">
+                <li class="toc-list-item">
+                  <a href="#on-making-small-things-fresh" class="toc-link node-name--H2">On Making Small Things, Fresh</a>
+                </li>
+                <li class="toc-list-item">
+                  <a href="#big-projects-are-self-sabotage" class="toc-link node-name--H2">Big Projects Are Self-Sabotage</a>
+                </li>
+                <li class="toc-list-item">
+                  <a href="#don-t-invent-everything-from-scratch" class="toc-link node-name--H2">Don't Invent Everything From Scratch</a>
+                </li>
+                <li class="toc-list-item">
+                  <a href="#learning-by-yourself-is-no-virtue-find-a-master" class="toc-link node-name--H2">Learning By Yourself is No Virtue. Find A Master</a>
+                </li>
+                <li class="toc-list-item">
+                  <a href="#know-where-your-art-stops" class="toc-link node-name--H2">Know Where Your Art Stops</a>
+                </li>
+                <li class="toc-list-item">
+                  <a href="#work-with-the-present-one-day-at-a-time" class="toc-link node-name--H2">Work With The Present. One Day At A Time</a>
+                </li>
+                <li class="toc-list-item">
+                  <a href="#on-giving-advice-" class="toc-link node-name--H2">On Giving Advice :)</a>
+                </li>
+                <li class="toc-list-item">
+                  <a href="#appendix-original-german" class="toc-link node-name--H2">Appendix: Original German</a>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>        
         <!--kg-card-end: html-->
         <h2 id="on-making-small-things-fresh">On Making Small Things, Fresh</h2>
         <blockquote>
@@ -619,5 +651,38 @@
         <button type="button">subscribe</button>
       </div>
     </footer>
+    <script src="../tocbot.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        tocbot.init({
+          tocSelector: ".toc2", // Selector for the TOC container
+          contentSelector: ".main-content", // Selector for the content container
+          headingSelector: "h1, h2, h3", // Headings to include in the TOC
+          collapseDepth: 6,
+        });
+      });
+    </script>
+
+    <script>
+      // Function to apply subtle HSLA background colors to TOC links
+      function applyRainbowBackgroundColors() {
+        // Select all the header links in the TOC
+        const tocHeaders = document.querySelectorAll(".toc-link");
+
+        tocHeaders.forEach((header, index) => {
+          // Calculate the hue value to create a rainbow effect, use the full color wheel (360)
+          const hue = (index * 360) / tocHeaders.length;
+          // Set saturation to 50%, lightness to 50%, and a very low alpha for subtlety
+          const color = `hsla(${hue}, 50%, 50%, 0.1)`;
+          // Apply the background color to the current header
+          header.style.backgroundColor = color;
+        });
+      }
+
+      // Run the function to apply the background colors after the DOM content is loaded
+      document.addEventListener("DOMContentLoaded", (event) => {
+        applyRainbowBackgroundColors();
+      });
+    </script>
   </body>
 </html>
