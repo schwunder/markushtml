@@ -1,0 +1,488 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto",
+    "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+}
+
+header,
+footer {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+blockquote {
+  border-left: 0.25rem solid #3eb0ef;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  margin: 1em 2em 2em 4em;
+  padding: 1em 2em 2em 1em;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+ol {
+  orphans: 3;
+  widows: 3;
+  line-height: 1.5;
+  margin: 1rem auto;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+ul {
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  text-align: left;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  margin: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #8f240ccc;
+  font-style: italic;
+  border-bottom: 0.1rem solid #8f240ccc;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+img {
+  border: 0.1rem solid black;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  background: white;
+  box-sizing: border-box;
+}
+
+a {
+  color: #121212;
+}
+
+section {
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.full-height {
+  grid-row: span 3;
+}
+
+input[type="email"] {
+  padding: 0.5em;
+  color: #494e52;
+  background-color: #fff;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.125);
+}
+
+button[type="button"] {
+  background-color: black;
+  color: white;
+  border: 1px solid #ff1a75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscription {
+  display: flex;
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.subscription input[type="email"] {
+  flex: 3;
+}
+
+.subscription button[type="button"] {
+  flex: 1;
+}
+
+figcaption {
+  width: 65%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgb(119, 122, 125);
+  margin: 1rem auto;
+}
+
+figcaption a {
+  color: rgb(119, 122, 125);
+}
+
+figure {
+  margin: 1rem auto;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.navbar a:nth-child(2) {
+  margin-left: 2rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}
+
+article {
+  padding: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.main-content {
+  padding: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  article {
+    width: 70vw;
+  }
+  .main-content {
+    width: 70vw;
+  }
+  .footer-subscription {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  article {
+    width: 800px;
+  }
+  .main-content {
+    width: 800px;
+  }
+  .footer-subscription {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content {
+    width: 90%;
+  }
+  article {
+    width: 90%;
+  }
+  .footer-subscription,
+  .bio-wrapper {
+    display: flex;
+    margin: 1rem auto;
+    justify-content: center;
+  }
+
+  .bio-wrapper {
+    width: 100% !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  .navbar {
+    width: 80%;
+    margin: 0 auto;
+    grid-gap: 0.5rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+.bio-wrapper {
+  border: 0.1rem solid #7036e38f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  margin-left: calc(-5vw); /* Negative margin to keep it centered */
+  margin-right: calc(-5vw);
+  width: calc(100% + 10vw); /* Making it slightly wider than its container */
+}
+
+.essay-list {
+  list-style-type: katakana;
+  color: #8f240ccc;
+}
+
+/* Grid layout for projects */
+.projects {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  gap: 2rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, auto);
+}
+
+.full-height {
+  grid-row: span 3;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 261px);
+  grid-gap: 3px;
+  justify-content: center;
+  margin: auto;
+}
+
+.gallery-item {
+  width: 261px;
+  margin-bottom: 3px;
+}
+
+.thumbnail,
+.thumbnail-grid {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+  border: 0.1rem solid black;
+  background: white;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.op {
+  font-size: 1.05rem;
+  border-radius: 0.3rem;
+  background: rgb(0 0 0 / 3%);
+  padding: 0.5rem;
+}
+
+.my_meta {
+  font-size: 0.8rem;
+  font-style: italic;
+  width: 60%;
+}
+
+.tldr {
+  padding: 1rem;
+  border: 1px solid orange;
+  background: rgb(244 70 17 / 3%);
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.thanks {
+  padding: 1rem;
+  font-size: smaller;
+  border: 1px solid #9033e74f;
+  background: rgb(110 102 102 / 12%);
+}
+
+.thumbnail {
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%; /* This will make the image responsive to the container's width */
+  max-width: 261px; /* Ensures that the image is not wider than the container */
+  width: 100%;
+  border: 0.1rem solid black;
+  background: white;
+  box-sizing: border-box; /* Include padding and border in the element's width and height */
+}
+
+.thumbnail-grid {
+  width: 100%; /* will scale the width to fit the container */
+  height: auto; /* will maintain the aspect ratio */
+  object-fit: contain; /* will ensure the image is fully visible */
+  display: block; /* remove inline styling default of images */
+  margin: 0 auto; /* center the image within its container */
+  border: 0.1rem solid black; /* optional border */
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.thumbnail-1 {
+  width: 25%;
+}
+
+.gallery-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 0.1rem;
+}
+
+.toc2 {
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid #40e0d063; /* Semi-transparent border color */
+}
+
+.toc-list {
+  list-style: none; /* No bullets for any list */
+  margin: 0; /* No default margin for any list */
+  padding: 0; /* No default padding for top-level list */
+}
+
+.toc-list-item {
+  font-weight: bold; /* Bold font for top-level items */
+  margin-bottom: 10px; /* Space between items */
+}
+
+.toc-list .toc-list {
+  padding-left: 20px; /* Indent for nested lists */
+}
+
+.toc-list .toc-list .toc-list-item {
+  font-weight: normal; /* Normal font weight for nested items */
+}
+
+.toc-link {
+  color: black; /* Link color */
+  font-size: 18px; /* Uniform font size */
+  line-height: 1.6; /* Improved line height for readability */
+  padding: 2px 4px; /* Add padding around the text */
+  border-radius: 4px; /* Optional: round the corners for a smoother effect */
+  display: inline; /* Ensure background only covers the text */
+  box-decoration-break: clone; /* Ensure background wraps nicely around text */
+  -webkit-box-decoration-break: clone; /* Same as above for WebKit browsers */
+}
+
+.toc-link:hover,
+.toc-link.is-active-link {
+  text-decoration: underline; /* Underline on hover and for active link */
+}
+
+/* Styles for showing/hiding collapsible lists */
+.is-collapsible {
+  display: none; /* Hide by default */
+}
+
+.is-active-li > .is-collapsible {
+  display: block; /* Show when parent is active */
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  border: none;
+}
+
+/* Style the modal content (iframe) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%; /* You can adjust this as needed */
+  max-width: 700px; /* Maximum width of the content */
+  height: auto;
+  border: none;
+}
+
+/* Add some style to the iframe */
+iframe.modal-content {
+  height: calc(100vh - 60px); /* Full viewport height minus some margin */
+  width: calc(100vw - 40px); /* Full viewport width minus some margin */
+  border: none;
+}

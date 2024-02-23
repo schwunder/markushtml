@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Extensions are Underexplored</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+  
+    <header>
+      <nav class="navbar">
+        <a href="/markushtml/index.html" class="nav-item">△</a>
+        <a href="/markushtml/play.html" class="nav-item">Play</a>
+        <a href="/markushtml/sketch.html" class="nav-item">Sketch</a>
+        <a href="/markushtml/about.html" class="nav-item">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="main-content">
+        <h1 class="title" itemprop="headline">
+          Browser Extensions are Underexplored
+      </h1>
+        <p class="my_meta">
+
+            <time datetime="2021-02-02T12:28:40-05:00">
+            February 2, 2021.
+            </time>Send your thoughts via
+   
+            <a target="_blank" href="https://twitter.com/mkstra" >
+            twitter</a><iconify-icon data-icon="ei-sc-twitter" data-height="50" data-inline="false"></iconify-icon>
+   
+             or <a target="_blank" href="mailto:strasser.ms@gmail.com">
+              mail</a><iconify-icon data-icon="clarity:email-solid" data-height="50" data-inline="false"></iconify-icon>
+           </p>
+        <p>
+          Almost all of (knowledge) work is happening inside a browser
+          and<strong> </strong>most apps are becoming web apps <sup>1</sup>.
+          Operating system functions are largely off-shored to browsers.
+        </p>
+        <p>
+          Browser Extensions have access and context to the interactions in the
+          browser. They can access any entity (<em
+            >tweets, profiles, articles</em
+          >) and event (<em>liking, sending messages, looking at an image)</em>
+          that a browser enables. That’s most of digital life. There’s many
+          ideas that only work with having that context (<em
+            >eg. claim verification, flagging fake news</em
+          >) and so it seems like the next killer application should be a
+          browser (extension).
+        </p>
+        <p>
+          <strong
+            >So, why aren’t we seeing more innovative and ambitious browser
+            extensions?</strong
+          >
+        </p>
+        <p>
+          My null hypothesis is usually that people don’t have ideas. Also,
+          developing a complex browser extensions, from personal experience, is
+          quite annoying:
+        </p>
+        <ul>
+          <li>
+            The development experience is fragmented and hostile. For example.
+            state can be scattered between content-, background-, popup scripts,
+            storage APIs and a backend.
+          </li>
+          <li>
+            The feedback loop from changing code to seeing changes is much
+            slower.
+          </li>
+          <li>
+            I haven’t seen anybody figure out how to actually do software
+            testing for browser extensions effectively. There’s no end-2-end
+            testing and no half-way sane setup for integration testing.
+          </li>
+          <li>
+            Without solid automated tests while you develop, it gets
+            increasingly masochistic and asinine to add features.
+          </li>
+          <li>
+            That’s one reason why the interfaces of browser extensions are
+            staying simplistic
+          </li>
+          <li>
+            The Google Playstore controls distribution. Safari and Firefox can’t
+            get it together. Pushing a change can take a week until the
+            Playstore allows or rejects it.
+          </li>
+          <li>
+            Google likes to make arbitrary changes to the API and security model
+          </li>
+          <li>
+            This makes it fragile to base a business on a browser extension
+          </li>
+        </ul>
+        <p>That’s a few pointers for why there isn’t much happening.</p>
+        <p>
+          I still think browser extensions are massively underrated and
+          under-explored.
+        </p>
+        <hr />
+        <p>
+          (1) I haven’t seen good arguments for why this won’t happen,
+          especially with WASM and most of developer tooling focusing on web
+          stacks
+        </p>
+      </>
+    </main>
+    <footer class="footer">
+      <div class="footer-subscription">
+        <input type="email" placeholder=" 💌 your email ↩︎ " />
+        <button type="button">subscribe</button>
+      </div>
+    </footer>
+  </body>
+</html>

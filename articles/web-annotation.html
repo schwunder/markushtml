@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Annotation: A Short Dive</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="/markushtml/index.html" class="nav-item">△</a>
+        <a href="/markushtml/play.html" class="nav-item">Play</a>
+        <a href="/markushtml/sketch.html" class="nav-item">Sketch</a>
+        <a href="/markushtml/about.html" class="nav-item">About</a>
+      </nav>
+     
+    </header>
+
+    <main>
+      <article class="main-content">
+        <h1 class="title" itemprop="headline">
+          Web Annotation: A Short Dive
+        </h1>
+        <p class="my_meta">
+          <time datetime="2019-19-07T12:41:38-05:00"> July 19, 2019. </time>Send
+          your thoughts via
+
+          <a target="_blank" href="https://twitter.com/mkstra"> twitter</a
+          ><iconify-icon
+            data-icon="ei-sc-twitter"
+            data-height="50"
+            data-inline="false"
+          ></iconify-icon>
+
+          or <a target="_blank" href="mailto:strasser.ms@gmail.com"> mail</a
+          ><iconify-icon
+            data-icon="clarity:email-solid"
+            data-height="50"
+            data-inline="false"
+          ></iconify-icon>
+        </p>
+        <p>
+          <em
+            ><strong>Edit, August 2020:</strong> I now, a year after writing
+            this, think that <strong>general</strong> web annotation is not how
+            communal sense making is going to evolve. In contrast to general
+            annotation, domain-specific corpus and dataset annotation is a
+            different story and evolving rapidly. My prediction of an annotation
+            service that has a few million users within the next three years
+            (now two) will probably still come true, but I changed my prior of
+            hope for the area. My guess why this happens is that truth and
+            meaning are less and less found inside one document, so why invest
+            in massive annotation efforts if it's better to search outside the
+            document for more context? Also, many jobs of annotation, like claim
+            verification, flagging and connecting similar ideas, which I have
+            started to work on, can and will be substituted by ever higher
+            levels of natural language processing (NLP).</em
+          >
+        </p>
+        <p>
+          Last winter, I got fed up with how I do <em>Internet</em>, so I
+          <a
+            href="https://chrome.google.com/webstore/detail/lupa-reader/jldgmbdpnaegnmbejnpdokhkmobbonhg?authuser=0"
+            >prototyped a browser extension </a
+          >that lets you create and view annotations within your social circle
+          on any website. After sharing the alpha version with a friend, he
+          mentioned <a href="https://hypothes.is/">Hypothesis</a> – a team that
+          has been working on the same problem for years and already made strong
+          headway towards open source web annotation.
+        </p>
+        <p>
+          At first I was frustrated. <br />I spent many days with the torture of
+          modern web development<sup>1</sup>, when many of the problems were
+          already solved. It's a niche problem apparently, otherwise I'd have
+          discovered a solution before feeling pressured to build one.
+        </p>
+        <p>
+          At the moment, annotation is mostly used by institutional knowledge
+          workers (<em>education, publishing,…</em>). In fact, none of my
+          friends in tech or science use annotation for work and nobody does so
+          privately. This seems strange given that you can surf the web as
+          usual, <strong>AND</strong>:
+        </p>
+        <ul>
+          <li>
+            see other's insights, revisions, reviews, critiques, perspectives
+            when you look at some content
+          </li>
+          <li>
+            add value with highlights, reactions, comments without the site
+            having to build interfaces for it
+          </li>
+          <li>
+            discover shared interests together with friends or whatever group
+          </li>
+          <li>
+            build a richly interlinked knowledge and social graph while at it
+          </li>
+          <li>
+            research collaboratively on steroids
+            <em>(keyword: structured annotation markup)</em>
+          </li>
+          <li>….</li>
+        </ul>
+        <p>
+          True, you could get something similar by stacking a few tools (<em
+            >maybe Twitter, Delicious, Evernote…</em
+          >), switching between apps, keeping stock of context and references
+          and so on…but having those interfaces anchored to the actual
+          <em>segment of interest </em>instead<em>, </em
+          ><a
+            href="https://web.hypothes.is/blog/lets-use-the-annotated-web-to-coordinate-the-struggle-against-fake-news/"
+            >optionally with structured markup</a
+          ><em>,</em> changes how we interact, reason and evolve with it.
+          <em>Example</em>:
+          <a
+            href="https://web.hypothes.is/blog/lets-use-the-annotated-web-to-coordinate-the-struggle-against-fake-news/"
+            >Fighting Fake News</a
+          >
+          with <a href="https://schema.org/ClaimReview">typed</a> annotations.
+        </p>
+        <p>
+          At least that’s what I thought when I started working on it. My
+          question then became:
+        </p>
+        <blockquote>
+          If it’s so awesome, why isn't it <em>more</em> common?
+        </blockquote>
+        <p>
+          A shallow dive into the <strong>semantic web</strong> rabbit hole,
+          promptly surfaced a
+          <a
+            href="https://docs.google.com/spreadsheets/d/1f86L7vgHUW9wSLNNSunhjmtxtg6KlCOVpHGKbqUzW-Y/edit#gid=0"
+            >graveyard</a
+          >
+          of failed attempts at web annotation. I'll pick two as example: Google
+          SideWiki and (Rap)Genius.
+        </p>
+        <ul>
+          <li>
+            <em>SideWiki</em> got cancelled in 2011. I couldn’t find out why
+            exactly<sup>2</sup>. Google seemed to have all ingredients to win
+            big.
+          </li>
+          <li>
+            (Rap)<em>Genius</em>, after getting funded by a16z six years back,
+            wanted to annotate more than just song lyrics, but didn’t. They
+            still pay lip service to the idea and have portfolio cases where it
+            was used, but the project seems to be a silent failure (<em
+              >can’t even download a browser extension at this point</em
+            >). I guess many users are cautious to silo their content inside
+            another VC-funded media company.
+          </li>
+        </ul>
+        <p>
+          There are
+          <a href="https://en.wikipedia.org/wiki/Web_annotation">many more</a>,
+          some still active. Amongst them <em>Hypothesis</em> surfaces as most
+          reliable. Its open source funding structure makes it less prone to
+          surveillance capitalism, sociopath executives, the Chinese military or
+          other yet-to-discover corporate BS. You own your data, full stop.
+        </p>
+        <p>
+          After I overcame the bias I had for my own project, I’ve grown to like
+          <em>Hypothesis </em>and embedded it site-wide here. The UI and social
+          features are underdeveloped, but that’s fixable. I hope they succeed
+          also beyond institutions.
+        </p>
+        <figure class="kg-card kg-image-card kg-card-hascaption">
+          <img
+            src="../images/target_wep_png_lossless/annotation-1_lossless.webp"
+            class="kg-image"
+            alt
+            loading="lazy"
+          />
+          <figcaption>
+            <a href="https://cs231n.github.io/convolutional-networks/"
+              >Stanford's CNN course</a
+            >: Active discussions among online students in the margins
+          </figcaption>
+        </figure>
+        <figure class="kg-card kg-image-card kg-card-hascaption">
+          <img
+            src="../images/target_wep_png_lossless/annotation-2_lossless.webp"
+            class="kg-image"
+            alt
+            loading="lazy"
+          />
+          <figcaption>
+            Schools are increasingly adopting annotation. One reason: LMS and
+            interoperability have improved.&nbsp;
+          </figcaption>
+        </figure>
+        <p>
+          It wouldn’t make sense to get VC funding and develop a competitor that
+          then has to silo data for competitive advantage and network effects.
+          I’ve had a taste of that and it’s not healthy for science, society or
+          the web. I’d rather build a new generation of apps on top of this
+          emerging, open ecosystem.
+        </p>
+        <p>
+          The optimist in me predicts an uprise of those meta-applications in
+          the next three years, with one of them having a few million users. The
+          pessimist still wants a compelling reason why annotation did not take
+          off with knowledge workers so far...the tech was there over a decade
+          ago.
+        </p>
+        <p>
+          Dreams about a semantic web with intelligent agents, rich context,
+          provenance tracing, lateral search […] have been around for 30 years,
+          but are persistently not happening. Currently, we still copy
+          information mostly by value, not reference.
+        </p>
+        <p>
+          Referencing entire websites is not granular enough to reuse, test,
+          verify and improve on an idea along a single chain of work and
+          revision. Most entities don’t have a wikipedia page.
+        </p>
+        <p>
+          I feel we’re at a point in this giant <em>internet project</em> where
+          many among us, especially developers, are throwing up (<em
+            >their hands in anger)</em
+          >
+          and shout: “<em>Refactor</em>!".
+        </p>
+        <p>
+          Getting annotation right is a fundamental piece for better knowledge
+          exchange. To review, iterate, comment, tag, contextualize, version and
+          <a href="https://markusstrasser.org/future-search-query">search</a>
+          our ideas exactly where they live is how we build tested knowledge
+          that gets richer and more meaningful over time. Fingers crossed🤞.
+        </p>
+        <hr />
+        <!--kg-card-begin: html-->
+        <p>
+          <a name="web dev">1.</a> It’s a giant garbage fire of throw-away leaky
+          abstractions and overbloaded, breaking dependencies. Satan recently
+          switched torture providers and new arrivals to hell have to debug
+          CD/CI pipelines of B2B apps.
+          <br />
+          <br />
+          <a name="sidewiki">2.</a> there was some backlash from site owners who
+          did not want their sites smeared by “grafitti” from trolls, but that’s
+          usually not a show stopper<!--kg-card-end: html-->
+        </p>
+      </>
+    </main>
+    <footer class="footer">
+      <div class="footer-subscription">
+        <input type="email" placeholder=" 💌 your email ↩︎ " />
+        <button type="button">subscribe</button>
+      </div>
+    </footer>
+  </body>
+</html>

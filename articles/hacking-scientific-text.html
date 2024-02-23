@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hacking on Scientific Text at Scale</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="/markushtml/index.html" class="nav-item">△</a>
+        <a href="/markushtml/play.html" class="nav-item">Play</a>
+        <a href="/markushtml/sketch.html" class="nav-item">Sketch</a>
+        <a href="/markushtml/about.html" class="nav-item">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="main-content">
+        <h1 class="title" itemprop="headline">
+          Hacking on Scientific Text at Scale
+        </h1>
+        <p class="my_meta">
+          <time datetime="2020-04-09T14:39:02-05:00"> September 4, 2020. </time
+          >Send your thoughts via
+
+          <a target="_blank" href="https://twitter.com/mkstra"> twitter</a
+          ><iconify-icon
+            data-icon="ei-sc-twitter"
+            data-height="50"
+            data-inline="false"
+          ></iconify-icon>
+
+          or <a target="_blank" href="mailto:strasser.ms@gmail.com"> mail</a
+          ><iconify-icon
+            data-icon="clarity:email-solid"
+            data-height="50"
+            data-inline="false"
+          ></iconify-icon>
+        </p>
+        <p><code>status: in-review</code></p>
+        <p>
+          I work on new interfaces to scientific knowledge. In the last couple
+          of months, I've seen developments that drastically lower the entry
+          barrier for working with high level concepts from scientific text.
+        </p>
+        <p>
+          Knowledge applications that <em>understand</em> the ever higher
+          semantics of physical and life science texts can increasingly be built
+          without years of machine learning experience.
+        </p>
+        <p>
+          High level sophisticated language tools are now <em>hackable</em>.
+        </p>
+        <figure class="kg-card kg-image-card">
+          <img src="../images/target_wep_png_lossless/hacking-1_lossless.webp" />
+        </figure>
+        <p>
+          Of course, this sort of progress is a given, so to go beyond truisms
+          like "<em>Machine Learning is moving fast</em>", I claim that:
+        </p>
+        <blockquote>
+          In the last two years, practical NLP tooling for scientific literature
+          application - recently coined <a href="https://scinlp.org/">#sciNLP</a
+          ><strong>*</strong> - has progressed three times above baseline of
+          other ML domains like vision, reinforcement learning and generic NLP.
+        </blockquote>
+        <!--kg-card-begin: html-->
+        <div class="toc2">
+          <ol class="toc-list">
+            <li class="toc-list-item is-active-li">
+              <a href="#" class="toc-link node-name--H1 is-active-link"
+                >Hacking on Scientific Text at Scale</a
+              >
+              <ol class="toc-list is-collapsible">
+                <li class="toc-list-item">
+                  <a
+                    href="#models-strong-gains-in-low-level-language-processing-and-pipeline-modularity"
+                    class="toc-link node-name--H2"
+                    >Models: Strong Gains in "Low Level" Language Processing and
+                    Pipeline Modularity</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#patterns-finding-rules-without-linguists"
+                    class="toc-link node-name--H2"
+                    >Patterns: Finding Rules without Linguists</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a
+                    href="#data-bootstrapping-small-but-good-enough-datasets"
+                    class="toc-link node-name--H2"
+                    >Data: Bootstrapping Small but Good-Enough Datasets</a
+                  >
+                </li>
+                <li class="toc-list-item">
+                  <a href="#footnotes" class="toc-link node-name--H2"
+                    >Footnotes</a
+                  >
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+        <!--kg-card-end: html-->
+        <p>
+          I arbitrarily group these <strong>directions</strong>
+          <strong>of improvement</strong> into Models, Patterns and Data,
+          although these concepts are constantly dancing a
+          <strong>3-way-semantically-drifting-tango</strong>**
+        </p>
+        <hr />
+        <h2
+          id="models-strong-gains-in-low-level-language-processing-and-pipeline-modularity"
+        >
+          Models: Strong Gains in "Low Level" Language Processing and Pipeline
+          Modularity
+        </h2>
+        <p>
+          <strong>Stronger Fundament: </strong> Foundational (upstream) tasks in
+          the scientific NLP pipeline, like tokenization, syntactic parsing,
+          Named Entity Recognition [NER] and entity linking (matching an entity
+          with a concept inside an ontology) have seen big -<strong
+            >often double digit F1 or accuracy</strong
+          >- gains in domain specific benchmarks.
+        </p>
+        <p>
+          <strong
+            >Out-of-the-Box Access to Named Entities and Ontologies:
+          </strong>
+          <a href="https://scispacy.apps.allenai.org/">SciSpacy</a> and recently
+          <a href="https://stanfordnlp.github.io/stanza/biomed.html"
+            >BioStanza</a
+          >
+          and
+          <a href="https://github.com/flairNLP/flair/releases">others</a> make
+          it much easier to work with biomedical entities in text. This goes
+          beyond the biomedical domain and can be adapted for metallurgy,
+          agrochemical, material science, biophysics, etc.
+        </p>
+        <figure class="kg-card kg-image-card kg-card-hascaption">
+          <img src="../images/target_wep_png_lossless/hacking-2_lossless.webp" />
+          <figcaption>
+            <a href="https://github.com/kormilitzin/med7">Med7</a> a pre-trained
+            model for recognizing 7 types of medical entities
+          </figcaption>
+        </figure>
+        <p>
+          <strong>Modular Language Legos: </strong> Many pre-trained models for
+          specific tasks like negation detection, clause extraction or
+          constituency parsing are now just
+          <a href="https://spacy.io/universe">simple spaCy pipeline modules</a>.
+          SciSpacy and BioStanza integrate nicely with spaCy, which by itself
+          has one of the best developer experiences of any open source tool.
+        </p>
+        <figure class="kg-card kg-image-card kg-card-hascaption">
+          <img src="../images/target_wep_png_lossless/hacking-3_lossless.webp" />
+          <figcaption>
+            My half-baked sketch: NLP pipelines are increasingly composable.
+            Integrating high level text processing modules is often only a few
+            lines of code
+          </figcaption>
+        </figure>
+        <hr />
+        <h2 id="patterns-finding-rules-without-linguists">
+          Patterns: Finding Rules without Linguists
+        </h2>
+        <p>
+          <a
+            href="https://pdfs.semanticscholar.org/0692/b9ad39145f57237199f3d4488667d5d9e5e7.pdf"
+            >In practice</a
+          >, natural language applications are still largely built with
+          hand-coded rules, heuristics and pattern matching algorithms and not
+          some end-to-end neural network. That's because that is still the best
+          bet for getting high-precision, interpretable, debuggable results.
+        </p>
+        <p>
+          A <em>rule based system </em>works mostly off of surface forms. A
+          pattern, like in the image below, can catch
+          <strong>one</strong> surface form of an <em>idea</em>.
+        </p>
+        <figure class="kg-card kg-image-card">
+          <img src="../images/target_wep_png_lossless/hacking-4_lossless.webp" />
+        </figure>
+        <p>
+          But, as it turns out, there's thousand, often tens of thousands of
+          surface forms that can correspond to an idea. That's why rule-based
+          systems are said to be low on recall, or quantity of results.
+        </p>
+        <p>
+          On the other hand, a trained model can learn a fuzzy notion of
+          <em>similarity, a </em
+          ><a
+            href="https://en.wikipedia.org/wiki/Distributional_semantics#:~:text=Distributional%20semantics%20is%20a%20research,large%20samples%20of%20language%20data."
+            ><em>distributional semantic</em></a
+          ><em>. </em>In its high-dimensional distributional space, sentences
+          can happen to be close together for arbitrary reasons, which leads to
+          noisy results.
+        </p>
+        <p>
+          That's why it's still important to build reliable linguistic patterns,
+          most often based on constituency,
+          <a
+            href="https://explosion.ai/demos/displacy?text=it%27s%20still%20important%20to%20build%20reliable%20linguistic%20patterns%2C%20most%20often%20based%20on%20constituency%2C%20dependency%20or%20simple%20phrase%20matching&amp;model=en_core_web_sm&amp;cpu=1&amp;cph=1"
+            >dependency</a
+          >, keywords or simple phrase matching.
+        </p>
+        <p>
+          Still, I predict that neural networks can do that job as well in about
+          three years, at least for relation extraction.
+        </p>
+        <p>
+          But until then, an approach I like is
+          <a href="https://spike.pubmed.apps.allenai.org/search/pubmed">Spike</a
+          >. Scientists can use it as an advanced search tool, but there's
+          another use: quickly, iteratively finding new syntax-informed query
+          patterns for relation extraction.
+        </p>
+        <p>
+          A search system with <em>full corpus fast trial and error</em> like
+          Spike was not possible until
+          <a href="https://lum.ai/docs/odinson.pdf"
+            >a recent 150.000x improvement in syntax-based graph traversal</a
+          >. 150.000 times...
+        </p>
+        <figure class="kg-card kg-image-card kg-card-hascaption">
+          <img src="../images/target_wep_png_lossless/hacking-5_lossless.webp" />
+          <figcaption>Example of the Spike Query Language</figcaption>
+        </figure>
+        <p>
+          With that interface, we can find patterns with much less linguistic
+          finesse: just type a query, get a quick view of what it returns,
+          correct for edge cases and filter out bad hits. Rinse and repeat.
+        </p>
+        <p>
+          Then combine syntax based search with
+          <a
+            href="https://scinlp.org/pdfs/combining-neural-and-pattern-based-similarity-search.pdf"
+            >neural search and query-by-example</a
+          >
+          and have the best of both worlds.
+        </p>
+        <p>
+          Besides having a sanity check for syntax patterns, I feel
+          <strong>query-by-example</strong> is an idea we should port to
+          consumer knowledge tools. We could also use
+          <em>query-by-inverted-example</em> to find contradicting sentences in
+          a corpus for example.
+        </p>
+        <p>
+          <strong>Caveat: </strong> All these dependency (syntax) based
+          strategies and many of rule based algorithms
+          <strong>work downstream from dependency parsing</strong> (labels in
+          the syntax tree), which is not as reliable as you might hope***.
+        </p>
+        <p>
+          This includes efforts to feed syntax trees into neural networks (<a
+            href="https://pdfs.semanticscholar.org/2acc/e623506c873e8ff63f90071aafe89cd9b2bc.pdf"
+            >1</a
+          >, <a href="https://arxiv.org/pdf/1911.04123.pdf">2</a>) and
+          <a
+            href="https://academic.oup.com/bioinformatics/article/34/15/2614/4911883"
+            >hierarchical clustering and annotating dependency paths into
+            themes</a
+          >****.
+        </p>
+        <p>
+          If the dependency parsing is inaccurate, then things fall through the
+          cracks.
+        </p>
+        <hr />
+        <h2 id="data-bootstrapping-small-but-good-enough-datasets">
+          <strong>Data: Bootstrapping Small but Good-Enough Datasets</strong>
+        </h2>
+        <p>
+          Besides out-of-box, extensible annotation tooling like
+          <a href="https://prodi.gy/">prodi.gy</a>, there is under-the-radar
+          ideas like
+          <a href="https://dada.cs.washington.edu/qasrl/"
+            >Question-Answering Semantic Role Labeling</a
+          >
+          [QA-SRL] that can improve crowdsourcing for complex annotation tasks.
+        </p>
+        <p>
+          You can think of QA-SRL as a language model decomposing a hard
+          annotation task into many simple questions.
+        </p>
+        <figure class="kg-card kg-image-card kg-card-hascaption">
+          <img src="../images/target_wep_png_lossless/hacking-6_lossless.webp" />
+          <figcaption>QA-SRL</figcaption>
+        </figure>
+        <p>
+          This means you can
+          <strong>increasingly hire layman annotators</strong>, ie. your
+          unemployed extended family, and cut cost of labeled data by 5-10 times
+          compared to expert annotators:
+        </p>
+        <blockquote>
+          Exploiting the open nature of the QA-SRL schema, our nonexpert
+          annotators produce rich argument sets with many valuable implicit
+          arguments.<br />[...] Our workers’ annotation quality, and
+          particularly its coverage, are on par with expert annotation<br /><br />From
+          <a href="https://arxiv.org/pdf/1911.03243.pdf"
+            >Controlled Crowdsourcing for High-Quality QA-SRL Annotation</a
+          >
+          <br />May 2020
+        </blockquote>
+        <figure class="kg-card kg-image-card">
+          <img src="../images/target_wep_png_lossless/hacking-7_lossless.webp" />
+        </figure>
+        <p>
+          And QA-SRL mixes well with
+          <a
+            href="http://markneumann.xyz/blog/syntax/#a-quick-foray-into-applied-nlp-tasks"
+            >Almost Semantic Role Labeling</a
+          >, which is the idea that you can simplify most NLP tasks into a span
+          prediction task. As
+          <a href="http://markneumann.xyz/blog/syntax/">Mark Neumann noted:</a>
+        </p>
+        <blockquote>
+          "The overall idea is to use natural language questions (mostly from
+          templates) to extract argument spans for particular roles. This
+          <strong
+            >abstracts away the linguistic knowledge required to annotate this
+            data</strong
+          >, but also, from a more practical point of view, makes it easy to
+          modify the label space of annotations by changing the question
+          templates."
+        </blockquote>
+        <p>
+          There's tons of low hanging fruit on making interfaces that leverage
+          human judgement at ever higher scales. I see systems like Spike and
+          QA-SRL as infrastructure for raiding the orchid.
+        </p>
+        <blockquote>
+          Who is going to develop the first Software 2.0 IDEs, which help with
+          all of the workflows in accumulating, visualizing, cleaning, labeling,
+          and sourcing datasets? Perhaps the IDE bubbles up images that the
+          network suspects are mislabeled based on the per-example loss, or
+          assists in labeling by seeding labels with predictions, or suggests
+          useful examples to label based on the uncertainty of the network’s
+          predictions.<br /><br />Similarly, Github is a very successful home
+          for Software 1.0 code. Is there space for a Software 2.0 Github? In
+          this case repositories are datasets and commits are made up of
+          additions and edits of the labels.<br /><br />From
+          <a href="https://medium.com/@karpathy/software-2-0-a64152b37c35"
+            ><strong>Software 2.0</strong></a
+          >
+        </blockquote>
+        <p>
+          <strong>*Half-baked idea</strong>: Create annotation interfaces for
+          <em>batch annotation</em> of scoped<strong> text fragments</strong> or
+          the simplified
+          <a
+            href="https://www.benevolent.com/research/interpret-constructing-large-scale-biomedical-knowledge-bases-from-scratch-with-rapid-annotation-of-interpretable-patterns"
+            >annotation rules themselves</a
+          >. This batch-labeling-after-clustering
+          <a href="https://www.platform.ai">works ok for some image</a>
+          datasets, but what about trying something like a
+          <em>human-optimized text fragment 3D projection scheme</em>, so that
+          someone can rapidly spot mis-labeled or mis-clustered data?
+        </p>
+        <hr />
+        <p>
+          <strong
+            ><em
+              >This was a small glimpse of a rapidly changing infrastructure.
+            </em></strong
+          >
+        </p>
+        <p>
+          A few thought exercises: Let's take having a graph of high fidelity
+          relations from scientific text as a given... what can we build? How
+          can we assemble some statements directly into dynamic, executable
+          models? Can we quantify research novelty? Can we find critical gaps in
+          understanding or emerging fields of research? What are the new
+          interface primitives for cross-domain "graph-surfing" and other forms
+          of <em>hyperresearch</em>?
+        </p>
+        <figure class="kg-card kg-image-card kg-card-hascaption">
+          <img src="../images/target_wep_png_lossless/hacking-8_lossless.webp" />
+          <figcaption>Pruning the graph</figcaption>
+        </figure>
+        <hr />
+        <h2 id="footnotes">Footnotes</h2>
+        <p>
+          <em
+            ><strong>*</strong> If there's a sciNLP epicenter it's the AllenAI
+            institute. Besides the AllenNLP library, they constantly release
+            open source software and research like Spike, SciFact, SciBert,
+            SciParse, SciTail and the S2ORC corpus.</em
+          >
+        </p>
+        <p>
+          <strong>** </strong
+          ><em
+            >whereby patterns get embedded into models; model parameters
+            discretized back into patterns; patterns serialized into data; and
+            the symbolic gets excavated from a post-symbolic avalanche</em
+          >
+        </p>
+        <p>
+          <strong>***</strong
+          ><em
+            >Predicting exactly the right syntax tree (dependencies) is not as
+            accurate as reported. This makes a lot of Dependency Pattern
+            Matching brittle and low recall: the current effective LAS is
+            between 50-60%. What's the effect? A good pattern only matches half
+            the sentences it could extract from. I had this problem in a recent
+            experiment: patterns don't work if the tree you're matching on is
+            mislabelled. It made me less optimistic about doing all relation
+            extraction with linguistic patterns. Thanks for Mark Neumann for
+            <a
+              href="http://markneumann.xyz/blog/syntax/#a-quick-foray-into-applied-nlp-tasks"
+              >making this clear</a
+            >:</em
+          >
+        </p>
+        <blockquote>
+          Another less commonly discussed problem with dependency parsing is how
+          they are evaluated. Labeled and Unlabeled Attachment Score measure the
+          accuracy of attachment decisions in a dependency tree (with labeled
+          additionally considering the label of the dependency arc). It has
+          always struck me as quite bizarre why this evaluation is accepted in
+          the research community, given the standards of evaluation in other
+          common NLP tasks such as NER.
+        </blockquote>
+        <p>
+          <strong>**** </strong
+          ><em
+            >On of my favorite ideas of clustering dependency paths and then
+            labeling the clusters in respect to some theme (like inhibition,
+            mutation, up-regulation).
+          </em>
+        </p>
+        <blockquote>
+          In this paper, we apply the same algorithm
+          <strong
+            >to cluster textual <em>descriptions</em> into classes, grouping
+            descriptions of chemical-gene, gene–gene, gene-phenotype and
+            chemical-phenotype relationships into ‘themes</strong
+          >’.
+        </blockquote>
+        <blockquote>
+          We then map thousands of natural language descriptions to one or more
+          of these themes, including a quantitative score that represents the
+          strength of the mapping.
+        </blockquote>
+        <blockquote>
+          The result is a labeled, weighted network of biomedical relationships
+        </blockquote>
+        <p>
+          <em
+            >New dependency paths are then labeled from a theme by what cluster
+            is closest in the space. Another move from linguistics towards
+            vector calculus</em
+          >
+        </p>
+        <hr />
+      </article>
+    </main>
+    <footer class="footer">
+      <div class="footer-subscription">
+        <input type="email" placeholder=" 💌 your email ↩︎ " />
+        <button type="button">subscribe</button>
+      </div>
+    </footer>
+    <script src="../tocbot.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        tocbot.init({
+          tocSelector: ".toc2", // Selector for the TOC container
+          contentSelector: ".main-content", // Selector for the content container
+          headingSelector: "h1, h2, h3", // Headings to include in the TOC
+          collapseDepth: 6,
+        });
+      });
+    </script>
+
+    <script>
+      // Function to apply subtle HSLA background colors to TOC links
+      function applyRainbowBackgroundColors() {
+        // Select all the header links in the TOC
+        const tocHeaders = document.querySelectorAll(".toc-link");
+
+        tocHeaders.forEach((header, index) => {
+          // Calculate the hue value to create a rainbow effect, use the full color wheel (360)
+          const hue = (index * 360) / tocHeaders.length;
+          // Set saturation to 50%, lightness to 50%, and a very low alpha for subtlety
+          const color = `hsla(${hue}, 50%, 50%, 0.1)`;
+          // Apply the background color to the current header
+          header.style.backgroundColor = color;
+        });
+      }
+
+      // Run the function to apply the background colors after the DOM content is loaded
+      document.addEventListener("DOMContentLoaded", (event) => {
+        applyRainbowBackgroundColors();
+      });
+    </script>
+  </body>
+</html>
