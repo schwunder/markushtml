@@ -408,42 +408,57 @@
     <script>
       // JavaScript for handling modal pop-up
       document.addEventListener("DOMContentLoaded", function () {
-        // Ensure the script runs after the DOM is fully loaded
+  // Select the modal, image within the modal, caption area, and close button
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("img01"); // Ensure this is the img element in the modal
+  const modalIframe = document.getElementById("video01");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.getElementsByClassName("close")[0];
 
-        // Select the modal, iframe within the modal, caption area, and close button
-        const modal = document.getElementById("imageModal");
-        const modalIframe = document.getElementById("video01"); // Ensure this is the iframe element in the modal
-        const captionText = document.getElementById("caption");
-        const closeBtn = document.getElementsByClassName("close")[0];
+  // Check if elements exist
+  if (modal && modalImg && modalIframe && captionText && closeBtn) {
+    // Add click event to each gallery item
+    const galleryItems = document.getElementsByClassName("gallery-item");
+    for (let i = 0; i < galleryItems.length; i++) {
+      galleryItems[i].addEventListener("click", function () {
+        const img = this.getElementsByTagName("img")[0];
+        if (img) {
+          const videoUrl = img.getAttribute("data-video-url");
+          if (videoUrl) {
+            // Handle video URL: Open modal with video
+            modal.style.display = "block";
+            modalIframe.style.display = "block";
+            modalIframe.src = videoUrl;
+            modalImg.style.display = "none"; // Ensure image in modal is not displayed
+            captionText.innerHTML = img.getAttribute("data-caption");
+          } else {
+            // Handle image: Open modal with image
+            modal.style.display = "block";
+            modalImg.style.display = "block";
+            modalIframe.style.display = "none"; // Ensure iframe in modal is not displayed
+            modalIframe.src = ""; // Reset the iframe src
 
-        // Check if elements exist
-        if (modal && modalIframe && captionText && closeBtn) {
-          // Add click event to each gallery item
-          const galleryItems = document.getElementsByClassName("gallery-item");
-          for (let i = 0; i < galleryItems.length; i++) {
-            galleryItems[i].addEventListener("click", function () {
-              const img = this.getElementsByTagName("img")[0];
-              if (img) {
-                const videoUrl = img.getAttribute("data-video-url");
-                // Open modal if video URL is present
-                if (videoUrl) {
-                  modal.style.display = "block";
-                  modalIframe.style.display = "block";
-                  modalIframe.src = videoUrl;
-                  captionText.innerHTML = img.getAttribute("data-caption");
-                }
-              }
-            });
+            // Use data-original if present, otherwise use src
+            const originalSrc = img.getAttribute("data-original");
+            modalImg.src = originalSrc ? originalSrc : img.src;
+
+            captionText.innerHTML = img.getAttribute("data-caption");
           }
-
-          // Add click event to close button to hide the modal and stop video playback
-          closeBtn.addEventListener("click", function () {
-            modal.style.display = "none";
-            modalIframe.style.display = "none";
-            modalIframe.src = ""; // Reset the iframe src to stop video playback
-          });
         }
       });
+    }
+
+    // Add click event to close button to hide the modal
+    closeBtn.addEventListener("click", function () {
+      modal.style.display = "none";
+      modalImg.style.display = "none"; // Ensure image in modal is not displayed
+      modalIframe.style.display = "none"; // Ensure iframe in modal is not displayed
+      modalImg.src = ""; // Reset the image src
+      modalIframe.src = ""; // Reset the iframe src
+    });
+  }
+});
+
     </script>
   </body>
 </html>
