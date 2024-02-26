@@ -389,21 +389,26 @@
     <script>
       // Initialize Masonry after all images have loaded
       document.addEventListener("DOMContentLoaded", (event) => {
-        // Select all gallery elements
-        const galleries = document.querySelectorAll(".gallery");
+    // Select all gallery elements
+    const galleries = document.querySelectorAll(".gallery");
 
-        // Iterate over each gallery and initialize Masonry
-        galleries.forEach(function (grid) {
-          imagesLoaded(grid, function () {
+    // Iterate over each gallery and initialize Masonry
+    galleries.forEach(function (grid) {
+        imagesLoaded(grid, function () {
+            // Check if the screen width is under 767px
+            const columnWidth = window.innerWidth < 767 ? 361 : 261;
+
+            // Initialize Masonry with dynamic columnWidth
             new Masonry(grid, {
-              itemSelector: ".gallery-item",
-              columnWidth: 261,
-              gutter: 3,
-              fitWidth: true,
+                itemSelector: ".gallery-item",
+                columnWidth: columnWidth, // Set columnWidth based on screen width
+                gutter: 3,
+                fitWidth: true,
             });
-          });
         });
-      });
+    });
+});
+
     </script>
     <script>
       // JavaScript for handling modal pop-up
