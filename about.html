@@ -412,51 +412,48 @@
   const modalImg = document.getElementById("img01");
   const modalIframe = document.getElementById("video01");
   const captionText = document.getElementById("caption");
-  const closeBtn = document.getElementsByClassName("close")[0];
+  const closeBtn = document.querySelector(".close"); // Simplified selector
+
+  // Function to open modal with appropriate content
+  const openModal = (src, isVideo, caption) => {
+    modal.style.display = "block";
+    if (isVideo) {
+      modalIframe.style.display = "block";
+      modalIframe.src = src;
+      modalImg.style.display = "none";
+    } else {
+      modalImg.style.display = "block";
+      modalImg.src = src;
+      modalIframe.style.display = "none";
+      modalIframe.src = ""; // Reset src to stop video
+    }
+    captionText.innerHTML = caption;
+  };
+
+  // Function to close modal and reset content
+  const closeModal = () => {
+    modal.style.display = "none";
+    modalImg.style.display = "none";
+    modalIframe.style.display = "none";
+    modalImg.src = "";
+    modalIframe.src = "";
+  };
 
   if (modal && modalImg && modalIframe && captionText && closeBtn) {
-    const galleryItems = document.getElementsByClassName("gallery-item");
-    for (let i = 0; i < galleryItems.length; i++) {
-      galleryItems[i].addEventListener("click", function () {
-        const img = this.getElementsByTagName("img")[0];
-        if (img) {
-          const videoUrl = img.getAttribute("data-video-url");
-          const originalSrc = img.getAttribute("data-original");
-          const isVideo = originalSrc && originalSrc.endsWith('.mp4');
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      img.addEventListener("click", function () {
+        const videoUrl = this.getAttribute("data-video-url");
+        const originalSrc = this.getAttribute("data-original") || this.src;
+        const isVideo = originalSrc.endsWith('.mp4') || videoUrl !== null;
 
-          if (videoUrl) {
-            modal.style.display = "block";
-            modalIframe.style.display = "block";
-            modalImg.style.display = "none";
-            modalIframe.src = videoUrl;
-            captionText.innerHTML = img.getAttribute("data-caption");
-          } else if (isVideo) {
-            modal.style.display = "block";
-            modalIframe.style.display = "block";
-            modalImg.style.display = "none";
-            modalIframe.src = originalSrc;
-            captionText.innerHTML = img.getAttribute("data-caption");
-          } else {
-            modal.style.display = "block";
-            modalImg.style.display = "block";
-            modalIframe.style.display = "none";
-            modalIframe.src = "";
-            modalImg.src = originalSrc ? originalSrc : img.src;
-            captionText.innerHTML = img.getAttribute("data-caption");
-          }
-        }
+        openModal(videoUrl || originalSrc, isVideo, this.getAttribute("data-caption"));
       });
-    }
-
-    closeBtn.addEventListener("click", function () {
-      modal.style.display = "none";
-      modalImg.style.display = "none";
-      modalIframe.style.display = "none";
-      modalImg.src = "";
-      modalIframe.src = "";
     });
+
+    closeBtn.addEventListener("click", closeModal);
   }
 });
+
 
 
     </script>
