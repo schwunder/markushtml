@@ -594,7 +594,7 @@
           // Calculate the hue value to create a rainbow effect, use the full color wheel (360)
           const hue = (index * 360) / tocHeaders.length;
           // Set saturation to 50%, lightness to 50%, and a very low alpha for subtlety
-          const color = `hsla(${hue}, 50%, 50%, 0.1)`;
+          const color = `hsla(${hue}, 50%, 50%, 0.06)`;
           // Apply the background color to the current header
           header.style.backgroundColor = color;
         });
