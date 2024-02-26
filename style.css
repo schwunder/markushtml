@@ -327,16 +327,17 @@ article {
 }
 
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
   padding-top: 100px;
+  background-color: rgba(1, 1, 1, 0.9);
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(1, 1, 1, 0.9);
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  border: none;
 }
 
 .modal-content {
@@ -476,19 +477,6 @@ article {
 
 .is-active-li > .is-collapsible {
   display: block; /* Show when parent is active */
-}
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(250, 250, 250, 0.8);
-  border: none;
 }
 
 /* Style the modal content (iframe) */
