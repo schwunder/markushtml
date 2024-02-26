@@ -380,7 +380,7 @@ article {
   max-width: 261px; /* Ensures that the image is not wider than the container */
   width: 100%;
   border: 0.1rem solid black;
-  background: black;
+  background: white;
   box-sizing: border-box; /* Include padding and border in the element's width and height */
 }
 
@@ -466,7 +466,7 @@ article {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(200, 200, 200, 0.95);
+  background-color: rgba(119, 122, 125, 0.1);  /* Black w/ opacity */
   border: none;
 }
 
