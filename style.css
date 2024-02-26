@@ -13,30 +13,18 @@ footer {
 
 blockquote {
   border-left: 0.25rem solid #3eb0ef;
-  line-height: 1.5;
   background-color: #f9f9f9;
-  font-size: 1rem;
-  margin: 1em 2em 2em 4em;
-  padding: 1em 2em 2em 1em;
+  margin: 1em 1em 1em 0;
+  padding: 1em 1em 1em 1em;
   min-width: 100%;
   box-sizing: border-box;
 }
 
-ol {
-  orphans: 3;
-  widows: 3;
-  line-height: 1.5;
-  margin: 1rem auto;
-  padding: 0;
-  font-size: 0.9rem;
-}
-
-
-
+ol,
 ul {
-  padding: 1rem;
-  font-size: 1rem;
-  line-height: 1.3;
+  list-style-position: inside; /* Positions the bullet or number inside the list item */
+  width: 100%;
+  margin-left: 0.5rem;
 }
 
 h1,
@@ -44,56 +32,71 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
+h6 {
   text-align: left;
+  font-weight: bold;
   min-width: 100%;
   box-sizing: border-box;
 }
 
-p {
-  line-height: 1.5;
-  font-size: 1.1rem;
+p,
+li,
+blockquote {
+  line-height: 1.25;
+  font-size: 1.25rem;
+  margin-top: 0;
+  text-align: left;
+  color: rgb(73, 78, 82);
+  font-weight: 400;
 }
 
 li {
-  line-height: 1.5;
+  width: 90%;
+}
+
+ul li {
+  padding-bottom: 1em;
 }
 
 @media (max-width: 767px) {
-  p {
+  p,
+  li,
+  blockquote {
     font-size: 1rem;
   }
 }
 
 h1 {
-  font-size: 1.6rem;
-  font-weight: bold;
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.8rem;
 }
 
 h3 {
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-decoration: underline;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 h4 {
   margin: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.3rem;
   color: #8f240ccc;
   font-style: italic;
   border-bottom: 0.1rem solid #8f240ccc;
 }
 
 h5 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+}
+
+article h2,
+article h4,
+article h5,
+article h6 {
+  box-shadow: 0 1px 0 0 rgba(180, 180, 180, 1); /* Horizontal shadow as underline */
+  padding-bottom: 0.5em; /* Space between text and underline */
 }
 
 img {
@@ -154,7 +157,7 @@ button[type="button"] {
 }
 
 figcaption {
-  width: 65%;
+  width: 85%;
   text-align: center;
   font-size: 0.9rem;
   color: rgb(119, 122, 125);
@@ -172,15 +175,6 @@ figcaption a {
 figure {
   margin: 1rem auto;
 }
-
-ul li {
-  margin-bottom: 1rem; /* Adds a 1rem gap below each <li> */
-}
-
-ol li {
-  margin-bottom: 1rem; /* Adds a 1rem gap below each <li> */
-}
-
 
 .navbar {
   display: grid;
@@ -209,7 +203,9 @@ article {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  width: 85vw;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .main-content {
@@ -222,13 +218,8 @@ article {
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
-  article {
-    padding: 2rem;
-    width: 70vw;
-    margin: 0 auto;
-  }
   .main-content {
-    width: 70vw;
+    width: 85vw;
     margin: 0 auto;
   }
   .footer-subscription {
@@ -240,7 +231,7 @@ article {
 @media (min-width: 1200px) {
   article {
     padding: 2rem;
-    width: 800px;
+    width: 85vw;
     margin: 0 auto;
   }
   .main-content {
@@ -258,7 +249,7 @@ article {
     width: 100%;
   }
   article {
-    width: 100%;
+    width: 95%;
   }
   .footer-subscription,
   .bio-wrapper {
@@ -457,7 +448,6 @@ article {
   padding: 0; /* No default padding for top-level list */
   padding-top: 1rem;
 }
-
 
 .toc-list-item {
   font-weight: bold; /* Bold font for top-level items */
