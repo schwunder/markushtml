@@ -288,6 +288,7 @@ article {
 .essay-list {
   list-style-type: katakana;
   color: #8f240ccc;
+  margin: 0;
 }
 
 /* Grid layout for projects */
