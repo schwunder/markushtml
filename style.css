@@ -320,6 +320,7 @@ article {
 }
 
 .modal-content {
+  max-height: 80vh; /* Limit the height to 70% of the viewport height */
   margin: auto;
   display: block;
   width: 80%;
