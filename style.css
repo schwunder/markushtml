@@ -28,8 +28,10 @@ ol {
   line-height: 1.5;
   margin: 1rem auto;
   padding: 0;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
+
+
 
 ul {
   padding: 1rem;
@@ -52,6 +54,10 @@ p {
 p {
   line-height: 1.5;
   font-size: 1.1rem;
+}
+
+li {
+  line-height: 1.5;
 }
 
 @media (max-width: 767px) {
@@ -166,6 +172,15 @@ fig-color {
 figure {
   margin: 1rem auto;
 }
+
+ul li {
+  margin-bottom: 1rem; /* Adds a 1rem gap below each <li> */
+}
+
+ol li {
+  margin-bottom: 1rem; /* Adds a 1rem gap below each <li> */
+}
+
 
 .navbar {
   display: grid;
@@ -440,11 +455,15 @@ article {
   list-style: none; /* No bullets for any list */
   margin: 0; /* No default margin for any list */
   padding: 0; /* No default padding for top-level list */
+  padding-top: 1rem;
 }
+
 
 .toc-list-item {
   font-weight: bold; /* Bold font for top-level items */
   margin-bottom: 10px; /* Space between items */
+  line-height: 2.5; /* Improved line height for readability */
+  font-size: 0.85rem;
 }
 
 .toc-list .toc-list {
