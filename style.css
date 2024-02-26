@@ -165,8 +165,8 @@ figcaption a {
   color: rgb(119, 122, 125);
 }
 
-fig-color {
-  color: white
+.fig-color {
+  color: rgb(235, 235, 235);
 }
 
 figure {
@@ -368,7 +368,7 @@ article {
   position: absolute;
   top: 15px;
   right: 35px;
-  color: rgb(119, 122, 125);
+  color: rgb(235, 235, 235);
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
