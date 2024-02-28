@@ -192,9 +192,9 @@ button[type="button"] {
 }
 
 figcaption {
-  width: 85%;
+  width: 90%;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: rgb(119, 122, 125);
   margin: 1rem auto;
 }
