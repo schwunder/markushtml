@@ -19,7 +19,7 @@
     </header>
 
     <main>
-      <article class="main-content">
+      <article>
         <h1 class="title" itemprop="headline">
           The Business of Extracting Knowledge from Academic Publications
         </h1>
@@ -1270,6 +1270,10 @@
             towards better problems.</strong
           >
         </p>
+        <div class="subscription">
+          <input type="email" placeholder=" 💌 your email ↩︎ ">
+          <button type="button">subscribe</button>
+        </div>
         <div class="thanks">
           <p>
             Thanks to
@@ -1366,18 +1370,12 @@
         </div>
       </article>
     </main>
-    <footer class="footer">
-      <div class="footer-subscription">
-        <input type="email" placeholder=" 💌 your email ↩︎ " />
-        <button type="button">subscribe</button>
-      </div>
-    </footer>
     <script src="../tocbot.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", (event) => {
         tocbot.init({
           tocSelector: ".toc2", // Selector for the TOC container
-          contentSelector: ".main-content", // Selector for the content container
+          contentSelector: "article", // Selector for the content container
           headingSelector: "h1, h2, h3", // Headings to include in the TOC
           collapseDepth: 6,
         });

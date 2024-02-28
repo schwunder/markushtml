@@ -18,7 +18,7 @@
     </header>
 
     <main>
-      <article class="main-content">
+      <article>
         <h1 class="title" itemprop="headline">
           Goethe's Advice to Young Artists
         </h1>
@@ -656,7 +656,7 @@
       document.addEventListener("DOMContentLoaded", (event) => {
         tocbot.init({
           tocSelector: ".toc2", // Selector for the TOC container
-          contentSelector: ".main-content", // Selector for the content container
+          contentSelector: "article", // Selector for the content container
           headingSelector: "h1, h2, h3", // Headings to include in the TOC
           collapseDepth: 6,
         });

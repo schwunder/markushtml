@@ -17,7 +17,7 @@
     </header>
 
     <main>
-      <article class="main-content">
+      <article>
         <h1 class="title" itemprop="headline">Conversations with Goethe</h1>
         <p class="my_meta">
           <time datetime="2020-18-08T11:15:51-05:00"> August 18, 2020. </time
@@ -691,7 +691,7 @@
       document.addEventListener("DOMContentLoaded", (event) => {
         tocbot.init({
           tocSelector: ".toc2", // Selector for the TOC container
-          contentSelector: ".main-content", // Selector for the content container
+          contentSelector: "article", // Selector for the content container
           headingSelector: "h1, h2, h3", // Headings to include in the TOC
           collapseDepth: 6,
         });
